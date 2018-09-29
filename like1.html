@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      .like-btn { font-size: 20px; }
+    </style>
+  </head>
+
+  <body>
+    <div class='wrapper'>
+      <button class='like-btn'>
+        <span class='like-text'>like</span>
+        <span>👍</span>
+      </button>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    const button = document.querySelector('.like-btn')
+    const buttonText = document.querySelector('.like-text')
+    let isLiked = false
+
+    button.addEventListener('click', () => {
+      isLiked = !isLiked
+      if (isLiked) {
+        buttonText.innerHTML = 'cancel'
+      } else {
+        buttonText.innerHTML = 'like'
+      }
+    }, false)
+  </script>
+</html>
