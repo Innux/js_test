@@ -145,20 +145,3 @@ for (var n of arr) {
   console.log(n)
 }
 
-// 异步任务封装
-var fetch = require('node-fetch')
-
-function* gen() {
-  var url = 'www.xxx.com'
-  var result = yield fetch(url)
-  console.log(result.bio)
-}
-
-var g = gen()
-var result = g.next()
-
-result.value.then(function(data) {
-  return data.json()
-}).then(function(data) {
-  g.next(data)
-})
